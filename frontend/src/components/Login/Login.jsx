@@ -5,7 +5,9 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
-const Login = () => {
+// import { store } from '../Redux/Store'
+
+export const Login = () => {
   const navigate = useNavigate();
   const [logindata, setLoginupdata] = useState({});
   const dispatch = useDispatch();
@@ -18,49 +20,45 @@ const Login = () => {
   const senddata = (e) => {
     e.preventDefault();
     dispatch(loginfailure());
-    fetch("http://localhost:8080/login",{
+    fetch("https://nikedataapi.herokuapp.com/login", {
       method: "POST",
       body: JSON.stringify(logindata),
-      headers: { "Content-Type": "application/json" },
+      headers: { "content-type": "application/json" },
     })
       .then((Response) => Response.json())
       .then((data) => {
         dispatch(loginsuccess(data));
-        if (data.token) navigate("/home") 
-        
-      
+        if (data.token) navigate("/home");
         else {
           alert("enter correct details");
         }
-        console.log(data)
       })
       .catch((e) => {
-        dispatch(loginfailure());
+        dispatch(loginfailure);
       });
   };
-  return (
-    <div className='main-box'>
-      <div className='sub-main'>
-     <h2 className='h2-text'>Login Here</h2>
 
-     <form onSubmit={senddata}>
-     <div className='form-group'>
-     <label className="form-label" >Email address</label>
-     <input placeholder="Enter email" type="Email" id="email" className="form-control"  onChange={handlechange}></input>
-     </div>
-     <div className='form-group'>
-     <label className="form-label1" >Password</label>
-     <input placeholder="Enter pass" type="Password" id="pass" className="form-control" onChange={handlechange}></input>
-     <h6 className="Register" >Don't Have an account?
-     {/* <a href="./Register.jsx">Register Here</a> */}
-     <Link to="/signup">Register Here</Link>
-     </h6>
-     <button className="button" tabIndex="0" type="submit"><span className="MuiButton-label">Login</span><span className="MuiTouchRipple-root"></span></button>
-     </div>
-    </form>
+  return (
+    <div className="main-box">
+      <div className="sub-main">
+        <h2 className='h2-text'>Login Here</h2>
+        <form onSubmit={senddata}>
+        <div className='form-group'>
+          <label className="form-label" id="lab">Email address</label>
+          <input type="text" placeholder="Email address" id="email" onChange={handlechange} className="form-control" />
+          </div>
+          <div className='form-group'>
+          <label id="lab" className="form-label1">Password</label>
+          <input type="text" placeholder="Password" id="password" onChange={handlechange} className="form-control" />
+         
+
+          <h6 className="Register">Don't Have an account?
+          <Link to="/signup">Register Here</Link>
+          </h6>
+          <button className="button" tabIndex="0" type="submit"><span className="MuiButton-label">Login</span><span className="MuiTouchRipple-root"></span></button>
+          </div>
+        </form>
       </div>
     </div>
-  )
-}
-
-export default Login
+  );
+};
