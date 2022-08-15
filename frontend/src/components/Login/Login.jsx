@@ -28,7 +28,8 @@ export const Login = () => {
       .then((Response) => Response.json())
       .then((data) => {
         dispatch(loginsuccess(data));
-        if (data.token) navigate("/home");
+        if (data.token){ navigate("/home");
+        alert("login successfully")}
         else {
           alert("enter correct details");
         }
@@ -40,6 +41,7 @@ export const Login = () => {
 
   return (
     <div className="main-box">
+     <img className="img-login" src="https://sso.masaischool.com/brand_dark.svg" alt="" />
       <div className="sub-main">
         <h2 className='h2-text'>Login Here</h2>
         <form onSubmit={senddata}>

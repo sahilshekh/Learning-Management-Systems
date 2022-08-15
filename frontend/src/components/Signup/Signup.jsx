@@ -24,6 +24,9 @@ export const Signup = () => {
       .then((data) => {
         setData(data);
       });
+      if(!data.token){
+        alert("You have already signed up! Please login")
+      }
   };
 
   useEffect(() => {
@@ -35,6 +38,7 @@ export const Signup = () => {
   // }
   return (
     <div>
+     <img src="https://sso.masaischool.com/brand_dark.svg" alt="" />
       <div className="main-box2">
       
         <div className="sub-main2">

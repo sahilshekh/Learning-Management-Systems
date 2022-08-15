@@ -1,20 +1,70 @@
 import { Nabvar } from '../Navbar/Navbar'
-import {Routes,Route} from "react-router-dom"
-import { Assignments } from '../Assignments/Assignments'
-import { Lectures } from '../Lectures/Letures'
-import { Login } from '../Login/Login'
-import { Signup } from '../Signup/Signup'
+import "./Home.css";
 export const Home=()=>{
     return(
         <div>
              <Nabvar/>
-     <Routes>
-      {/* <Route path='/' element={<Home/>}/> */}
-      {/* <Route path="/signIn" element={<Signup/>}/>
-        <Route path="/login" element={<Login/>}/> */}
-      <Route path='/assignments' element={<Assignments/>}/>
-      <Route path='/lectures'element={<Lectures/>}/>
-     </Routes>
+             <div className="today">
+        <div>
+          <p>Today's Schedule</p>
+        </div>
+        <div>
+          <button>BOOKMARKS</button>
+          <button>REFER & EARN</button>
+        </div>
+      </div>
+      <div className="today-content">
+            <div className="box">
+                <h3>9:00 AM</h3>
+                <h3>SCRUM</h3>
+
+            </div>
+            <div className="details">
+                <p>Scrum 13.08.2022</p>
+                <p> <span>Nrupul</span> Starting at <span>9:00 AM</span></p>
+                <button>live</button>
+            </div>
+            <p>Details</p>
+      </div>
+      <div className="today-content">
+            <div className="box">
+                <h3>9:00 AM</h3>
+                <h3>SCRUM</h3>
+
+            </div>
+            <div className="details">
+                <p>Scrum 13.08.2022</p>
+                <p> <span>Nrupul</span> Starting at <span>9:00 AM</span></p>
+                <button>live</button>
+            </div>
+            <p>Details</p>
+      </div>
+      <div className="today-content">
+            <div className="box">
+                <h3>9:00 AM</h3>
+                <h3>SCRUM</h3>
+
+            </div>
+            <div className="details">
+                <p>Scrum 13.08.2022</p>
+                <p> <span>Nrupul</span> Starting at <span>9:00 AM</span></p>
+                <button>live</button>
+            </div>
+            <p>Details</p>
+      </div>
+      <div className="today-content">
+            <div className="box">
+                <h3>9:00 AM</h3>
+                <h3>SCRUM</h3>
+
+            </div>
+            <div className="details">
+                <p>Scrum 13.08.2022</p>
+                <p> <span>Nrupul</span> Starting at <span>9:00 AM</span></p>
+                <button>live</button>
+            </div>
+            <p>Details</p>
+      </div>
         </div>
     )
 }
