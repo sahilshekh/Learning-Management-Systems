@@ -10,10 +10,7 @@ const assignmentSchema = new mongoose.Schema(
     time: { type: String, required: false },
     optional: { type: String, required: false },
   },
-  {
-    versionKey: false,
-    timestamps: true,
-  }
+ 
 );
 
 module.exports = mongoose.model("assignment", assignmentSchema);
