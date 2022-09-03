@@ -57,8 +57,8 @@
     height: 100px;
     margin: 2%;
     margin-right: 0%;
-    border: 1px solid navy;
-    background-color: blue;
+    border: 1px solid none;
+    background-color: #4F46E5;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -78,7 +78,7 @@
 }
 .details>:nth-child(1){
     font-size: 23px;
-    color: blue;
+    color: #4F46E5;
     font-family: calibri;
     font-weight: bold;
     margin-bottom: -2%;
@@ -95,10 +95,10 @@
     margin-top: 3%;
 }
 .details>button{
-    background-color: green;
+    background-color:#16A34A ;
     padding: 2px 5px;
     color: white;
-    font-weight: bold;
+   border: none;
 }
 .today-content>p{
     font-family: Arial, Helvetica, sans-serif;
